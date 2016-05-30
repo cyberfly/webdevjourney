@@ -34,6 +34,30 @@
           <h3>
 <a id="day-6-admin-routes-and-acl-using-entrust" class="anchor" href="#day-6-admin-routes-and-acl-using-entrust" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Day 6 (Admin routes and ACL using Entrust)</h3>
 
+<ol>
+<li>Install Laravel Entrust for ACL -&gt; <a href="https://github.com/Zizaco/entrust">https://github.com/Zizaco/entrust</a>
+</li>
+<li>Build a MVC for Users, Roles and Permissions. Use this to kickstart and customize -&gt; <a href="https://github.com/cyberfly/entrustmvc">https://github.com/cyberfly/entrustmvc</a>
+</li>
+<li>The CONTROLLER is stored in admin folder</li>
+<li>The VIEWS is in admin folder</li>
+<li>Routes.php we use admin prefix for Users, Roles and Permissions controller</li>
+</ol>
+
+<p>`Route::group(['prefix' =&gt; 'admin'], function () {</p>
+
+<pre><code>Route::resource('users', 'Admin\AdminUsersController');
+Route::resource('roles', 'Admin\AdminRolesController');
+Route::resource('permissions', 'Admin\AdminPermissionsController');
+</code></pre>
+
+<p>});`</p>
+
+<ol>
+<li><p>Using Request for Form Validation (AdminUsersRequest, AdminRolesRequest, AdminPermissionsRequest)</p></li>
+<li><p>Using middlewre to check permission for Users, Roles and Permissions controller method </p></li>
+</ol>
+
 <h3>
 <a id="day-5-refactor-complainrequest-validation" class="anchor" href="#day-5-refactor-complainrequest-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Day 5 (Refactor ComplainRequest validation)</h3>
 
